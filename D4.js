@@ -150,16 +150,31 @@ console.log(eyeColor)
   Inserisci l'oggetto dei personaggi in "starWarsCharacters" nell'array corrispondente al colore dei loro occhi nell'oggetto "eyeColor" precedentemente creato.
   Utilizza uno switch statement per determinare in quale proprietà inserire il personaggio
 */
-
-let eye_color = blue;//DA RIFARE!!!
-if (starWarsCharacters[i].eye_color=== blue){
-  eye_color.push(starWarsCharacters[i])
+for(let i = 0; i < starWarsCharacters.length; i++){
+  let coloreocchi = starWarsCharacters[i].eye_color
+  switch(coloreocchi) {
+case "blue":
+  eyeColor.blue.push(starWarsCharacters[i])
+  break;
+  case "yellow":
+    eyeColor.yellow.push(starWarsCharacters[i])
+    break;
+    case "brown":
+      eyeColor.brown.push(starWarsCharacters[i])
+      break;
+      case "red";
+      eyeColor.red.push(starWarsCharacters[i])
+    case "blue-gray";
+    eyeColor["blue-gray"].push(starWarsCharacters[i])
+    break;
+    default:
+      console.log("Gli occhi sono di un altro colore")
+  }
 }
-console.log(eye_color)
+
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
 */
-
 /* ESERCIZIO 7
 
 Crea uno switch statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'impotetica astronave contenente i personaggi dell'array "starWarsCharacters"
