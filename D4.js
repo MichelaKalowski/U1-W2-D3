@@ -2,7 +2,7 @@ const starWarsCharacters = [
   {
     name: "Luke Skywalker",
     height: "172",
-    mass: "277",
+    mass: 277,
     hair_color: "blond",
     skin_color: "fair",
     eye_color: "blue",
@@ -12,7 +12,7 @@ const starWarsCharacters = [
   {
     name: "C-3PO",
     height: "167",
-    mass: "75",
+    mass: 75,
     hair_color: "n/a",
     skin_color: "gold",
     eye_color: "yellow",
@@ -22,7 +22,7 @@ const starWarsCharacters = [
   {
     name: "R2-D2",
     height: "96",
-    mass: "32",
+    mass: 32,
     hair_color: "n/a",
     skin_color: "white, blue",
     eye_color: "red",
@@ -32,7 +32,7 @@ const starWarsCharacters = [
   {
     name: "Darth Vader",
     height: "202",
-    mass: "136",
+    mass: 136,
     hair_color: "none",
     skin_color: "white",
     eye_color: "yellow",
@@ -42,7 +42,7 @@ const starWarsCharacters = [
   {
     name: "Leia Organa",
     height: "150",
-    mass: "49",
+    mass: 49,
     hair_color: "brown",
     skin_color: "light",
     eye_color: "brown",
@@ -52,7 +52,7 @@ const starWarsCharacters = [
   {
     name: "Owen Lars",
     height: "178",
-    mass: "120",
+    mass: 120,
     hair_color: "brown, grey",
     skin_color: "light",
     eye_color: "blue",
@@ -62,7 +62,7 @@ const starWarsCharacters = [
   {
     name: "Beru Whitesun lars",
     height: "165",
-    mass: "75",
+    mass: 75,
     hair_color: "brown",
     skin_color: "light",
     eye_color: "blue",
@@ -72,7 +72,7 @@ const starWarsCharacters = [
   {
     name: "R5-D4",
     height: "97",
-    mass: "32",
+    mass: 32,
     hair_color: "n/a",
     skin_color: "white, red",
     eye_color: "red",
@@ -82,7 +82,7 @@ const starWarsCharacters = [
   {
     name: "Biggs Darklighter",
     height: "183",
-    mass: "84",
+    mass: 84,
     hair_color: "black",
     skin_color: "light",
     eye_color: "brown",
@@ -92,7 +92,7 @@ const starWarsCharacters = [
   {
     name: "Obi-Wan Kenobi",
     height: "182",
-    mass: "77",
+    mass: 77,
     hair_color: "auburn, white",
     skin_color: "fair",
     eye_color: "blue-gray",
@@ -150,23 +150,23 @@ console.log(eyeColor)
   Inserisci l'oggetto dei personaggi in "starWarsCharacters" nell'array corrispondente al colore dei loro occhi nell'oggetto "eyeColor" precedentemente creato.
   Utilizza uno switch statement per determinare in quale proprietà inserire il personaggio
 */
-for(let i = 0; i < starWarsCharacters.length; i++){
+for (let i = 0; i < starWarsCharacters.length; i++) {
   let coloreocchi = starWarsCharacters[i].eye_color
-  switch(coloreocchi) {
-case "blue":
-  eyeColor.blue.push(starWarsCharacters[i])
-  break;
-  case "yellow":
-    eyeColor.yellow.push(starWarsCharacters[i])
-    break;
+  switch (coloreocchi) {
+    case "blue":
+      eyeColor.blue.push(starWarsCharacters[i])
+      break;
+    case "yellow":
+      eyeColor.yellow.push(starWarsCharacters[i])
+      break;
     case "brown":
       eyeColor.brown.push(starWarsCharacters[i])
       break;
-      case "red";
+    case "red":
       eyeColor.red.push(starWarsCharacters[i])
-    case "blue-gray";
-    eyeColor["blue-gray"].push(starWarsCharacters[i])
-    break;
+    case "blue-gray":
+      eyeColor["blue-gray"].push(starWarsCharacters[i])
+      break;
     default:
       console.log("Gli occhi sono di un altro colore")
   }
@@ -175,6 +175,15 @@ case "blue":
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio
 */
+let massatotale = 0
+let i = 0
+while (i < starWarsCharacters.length) {
+  if (starWarsCharacters[i].mass) {
+    massatotale += (starWarsCharacters[i].mass)
+  }
+  i++
+}
+console.log("massatotale =" + massatotale)
 /* ESERCIZIO 7
 
 Crea uno switch statement per rivelare la tipologia di carico, utilizzando la massa totale, di un'impotetica astronave contenente i personaggi dell'array "starWarsCharacters"
@@ -188,7 +197,26 @@ Se la massa è superiore a 1000 stampa in console: "DANGER! OVERLOAD ALERT: Jump
 
 Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
-
+switch (true) {
+  case (massatotale < 500):
+    console.log("Ship is under loaded")
+    break;
+  case (massatotale == 500):
+    console.log("Ship is half loaded")
+    break;
+  case (massatotale > 700):
+    console.log("Warning: Load is over 700")
+    break;
+  case (massatotale > 900):
+    console.log("Critical Load: Over 900")
+    break;
+  case (massatotale > 1000):
+    console.log("DANGER! OVERLOAD ALERT: Jump ship now!")
+    break;
+  default:
+    console.log("valore non trovato")
+    break;
+}
 /* ESERCIZIO 8
 
 Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
