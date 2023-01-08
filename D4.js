@@ -236,7 +236,21 @@ Usa uno più for loop per raggiungere il risultato
 
 Una volta fatto, crea un console.log() per controllare la proprietà length di "characters" prima e dopo l'operazione
 */
+console.log("characters1", characters.length);
 
+for (let i = 0; i < characters.length; i++) {
+  const character = characters[i];
+
+  for (let z = 0; z < femaleCharacters.length; z++) {
+    const femCharacter = femaleCharacters[z];
+
+    if (femCharacter.name === character) {
+      console.log("female characters", character);
+      characters.splice(i, 1);
+    }
+  }
+}
+console.log("characters2", characters.length);
 /* EXTRA ESERCIZIO 10
 
 Crea una funzionalità che prenda un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo
