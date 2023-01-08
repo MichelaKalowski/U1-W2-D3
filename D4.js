@@ -119,8 +119,7 @@ console.log(characters)
   Seguendo i passaggi precedenti crea un array chiamato "femaleCharacters" e inserisci solo oggetti di personaggi femminili con questa struttura di esempio: 
   {name: Leia Organa, hair_color: "brown", eye_color: "brown"}
 */
-let femaleCharacters = [
-]
+let femaleCharacters = []
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === "female") {
     delete starWarsCharacters[i].height
@@ -142,7 +141,7 @@ const eyeColor = {
   yellow: [],
   brown: [],
   red: [],
-  "blue-gray": []
+  ["blue-gray"]: []
 }
 console.log(eyeColor)
 
@@ -221,7 +220,13 @@ switch (true) {
 
 Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi creare un nuovo array, o tentare la riassegnazione del valore corrispondente)
 */
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const character1 = starWarsCharacters[i];
 
+  if (character1.gender === "n/a") {
+    character1.gender = "robot";
+  }
+  console.log(starWarsCharacters);
 /* EXTRA ESERCIZIO 9
 
 Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome"
